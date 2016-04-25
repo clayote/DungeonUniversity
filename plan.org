@@ -226,3 +226,21 @@
   Upon playing a card, you "pencil in" your next actions to the
   ingame planner. A "Go" button appears on the next action, and you
   click it to advance to the end of that one action.
+* Rewards
+  The biggie is graduating from the university and beginning a career
+  in the magical arts. That means building skills, but also
+  connections, so you'll find out things about fellow students'
+  background that suggest opportunities--many of them will come from
+  families already established in life-magic surgery, some of them
+  will be related to the adventurers who pass thru the dungeon and can
+  get you an internship as a sidekick, that kind of thing.
+* Overpower
+  I was aiming to give mentalism a lot of very risky side effects,
+  such that indirect, low-power, but reliable manipulations of mental
+  state thru illusions and so-forth is the better bargain most of the
+  time. I'll devote some more thought to the varieties of insanity
+  that you can develop by the indiscreet application of
+  mentalism. They will be much more insidious than your usual Eternal
+  Darkness insanity; for instance, you may not notice the game is
+  misreporting your relationship levels until you are already stuck in
+  an abusive one.
