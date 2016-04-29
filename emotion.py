@@ -36,17 +36,32 @@ def install(engine):
         # The deal_damage function may delete the character
         # but not its avatar; that means it is no longer
         # anyone's body, just a corpse
-        engine.function['deal_damage'](
+        engine.function['damage_hp'](
             victim, character.stat['anger'], character.name
         )
 
     @engine.action
     def rage_damage_relationship(engine, character):
-        # pick the nearest character I care about
-        physical = engine.character['physical']
-        social = engine.character['social']
-        me_phys = character.avatar['physical']
-        me_soc = character.avatar['social']
-        closest = min(
-            (me_phys.shortest_path_length(friend), friend)
-            for friend in me_soc.successors()
+        # Pick the nearest character I care about.
+        friendship = min(
+            (
+                character.avatar['physical'].shortest_path_length(
+                    friendship.destination.user.avatar['physical']
+                ),
+                friendship
+            )
+            for friendship in character.avatar['social'].portals()
+            if friendship['interest'] > 0
+        )[1]
+        # Go to them
+        engine.tick += character.avatar['physical'].travel_to(
+            friendship.destination.user.avatar['physical'].location
+        )
+        # Damage their relationship to me
+        # (not mine to them, though)
+        friendship.reciprocal['interest'] -= max((
+            0,
+            character.stat['anger'] -
+            friendship['respect'] -
+            friendship.reciprocal['commitment']
+        ))
