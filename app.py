@@ -48,7 +48,8 @@ class DunUniApp(App):
             engine = LiSE.Engine('DunUniWorld.db', 'DunUniCode.db')
             import util
             import emotion
-            for mod in (util, emotion):
+            import world
+            for mod in (util, emotion, world):
                 mod.install(engine)
             # this init function should probably be called
             # automagically by LiSE when it's launched in a
