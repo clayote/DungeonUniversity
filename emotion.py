@@ -30,6 +30,8 @@ def install(engine):
             for user in thing.users():
                 if 'hp' in user:
                     peeps.append((thing, user))
+        if not peeps:
+            return
         victim = engine.choice(peeps)
         # TODO: effects of being at low HP
         # The deal_damage function may delete the character
