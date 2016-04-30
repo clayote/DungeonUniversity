@@ -22,23 +22,24 @@ def install(engine):
     @engine.action
     def rage_hit_someone(engine, character):
         # TODO: account for stronger characters, weapons, etc
+        # TODO: anything consequential if no one's around?
         me = character.avatar['physical']
         here = me.location
-        peeps = [
-            thing for thing in here.contents() if
-            list(user for user in thing.users() if 'hp' in user)
-        ]
-        victim = next(
-            user for user in engine.choice(peeps).users() if
-            'hp' in user
-        )
+        peeps = []
+        for thing in here.contents():
+            for user in thing.users():
+                if 'hp' in user:
+                    peeps.append((thing, user))
+        victim = engine.choice(peeps)
         # TODO: effects of being at low HP
         # The deal_damage function may delete the character
         # but not its avatar; that means it is no longer
         # anyone's body, just a corpse
+        howmuch = engine.randrange(1, character.stat['anger'])
         engine.function['damage_hp'](
-            victim, character.stat['anger'], character.name
+            victim, howmuch, character.name
         )
+        character.stat['anger'] -= howmuch
 
     @engine.action
     def rage_damage_relationship(engine, character):
@@ -59,9 +60,11 @@ def install(engine):
         )
         # Damage their relationship to me
         # (not mine to them, though)
+        howmuch = engine.randrange(1, character.stat['anger'])
         friendship.reciprocal['interest'] -= max((
             0,
-            character.stat['anger'] -
+            howmuch -
             friendship['respect'] -
             friendship.reciprocal['commitment']
         ))
+        character.stat['anger'] -= howmuch
