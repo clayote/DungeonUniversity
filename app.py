@@ -5,7 +5,8 @@ from kivy.lang import Builder
 from kivy.properties import BooleanProperty, ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-import LiSE
+import LiSE.proxy
+from LiSE.engine import Engine
 
 
 class DunUniPlayView(Screen):
@@ -44,7 +45,7 @@ class DunUniApp(App):
                 os.remove('DunUniCode.db')
             except FileNotFoundError:
                 pass
-            engine = LiSE.Engine('DunUniWorld.db', 'DunUniCode.db')
+            engine = Engine('DunUniWorld.db', 'DunUniCode.db')
             import util
             import emotion
             import world
