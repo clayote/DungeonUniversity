@@ -56,11 +56,8 @@ class DunUniApp(App):
             # game-start-ish way
             engine.function['__init__'](engine)
             engine.close()
-        self.procman = LiSE.proxy.EngineProcessManager(
-            worlddb='DunUniWorld.db',
-            codedb='DunUniCode.db'
-        )
-        self.engine = self.procman.start()
+        self.procman = LiSE.proxy.EngineProcessManager()
+        self.engine = self.procman.start('DunUniWorld.db', 'DunUniCode.db')
         self.screen = ScreenManager()
         self.playview = DunUniPlayView(
             engine=self.engine,
