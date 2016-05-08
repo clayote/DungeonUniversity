@@ -98,6 +98,7 @@ Builder.load_string("""
                 on_release: root.socialize()
         Board:
             id: board
+            size_hint_x: 0.6
             engine: root.engine
             character: root.character
 """)
