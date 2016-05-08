@@ -1,16 +1,10 @@
-import os
-
-from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import BooleanProperty, ObjectProperty
-from kivy.uix.screenmanager import ScreenManager, Screen
 
-import LiSE.proxy
-from LiSE.engine import Engine
+from ELiDE.game import GameScreen, GameApp
 
 
-class DunUniPlayView(Screen):
-    engine = ObjectProperty()
+class DunUniPlayView(GameScreen):
     character = ObjectProperty()
     class_time = BooleanProperty()
     sleepy = BooleanProperty()
@@ -30,42 +24,9 @@ class DunUniPlayView(Screen):
         pass
 
 
-class DunUniApp(App):
-    def build(self):
-        # build the game if I haven't yet
-        try:
-            os.stat('DunUniWorld.db')
-            os.stat('DunUniCode.db')
-        except FileNotFoundError:
-            try:
-                os.remove('DunUniWorld.db')
-            except FileNotFoundError:
-                pass
-            try:
-                os.remove('DunUniCode.db')
-            except FileNotFoundError:
-                pass
-            engine = Engine('DunUniWorld.db', 'DunUniCode.db')
-            import util
-            import emotion
-            import world
-            for mod in (util, emotion, world):
-                mod.install(engine)
-            # this init function should probably be called
-            # automagically by LiSE when it's launched in a
-            # game-start-ish way
-            engine.function['__init__'](engine)
-            engine.close()
-        self.procman = LiSE.proxy.EngineProcessManager()
-        self.engine = self.procman.start('DunUniWorld.db', 'DunUniCode.db')
-        self.screen = ScreenManager()
-        self.playview = DunUniPlayView(
-            engine=self.engine,
-            character=self.engine.character['player'],
-            name='play'
-        )
-        self.screen.add_widget(self.playview)
-        return self.screen
+class DunUniApp(GameApp):
+    modules = ['util', 'emotion', 'world']
+    name = 'DunUni'
 
 
 Builder.load_string("""
@@ -101,4 +62,8 @@ Builder.load_string("""
             size_hint_x: 0.6
             engine: root.engine
             character: root.character
+<Screens>:
+    DunUniPlayView:
+        name: 'play'
+        character: self.engine.character['player']
 """)
