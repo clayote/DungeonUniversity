@@ -1,0 +1,10 @@
+Dungeon University hasn't been released, and should be considered
+proprietary until I decide what to do with it.
+
+The LiSE engine and ELiDE app kit are GPL3 licensed, available here:
+https://github.com/LogicalDash/LiSE
+
+The background image, uncle_mugen_tomb.jpg, is by "Mugen" John Cel,
+and may be used and modified freely. I got it from the LemmaSoft
+forums:
+https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302&p=273080&hilit=tomb#p273080
