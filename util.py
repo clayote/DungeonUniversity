@@ -28,3 +28,16 @@ def install(engine):
     @engine.function
     def damage_relationship(whom, whose, amount):
         pass
+
+    @engine.method
+    def make_person(engine, who, where, who_knows=[]):
+        me = engine.new_character(who)
+        phys = engine.character['physical']
+        my_body = phys.new_thing(who, where)
+        me.add_avatar(my_body)
+        soc = engine.character['social']
+        my_brand = soc.new_place(who)
+        me.add_avatar(my_brand)
+        for pal in who_knows:
+            pally = soc.place[pal]
+            pally.two_way(my_brand)
