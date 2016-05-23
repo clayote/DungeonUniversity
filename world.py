@@ -13,10 +13,9 @@ def install(engine):
         lounge = phys.new_place('lounge1', _x=0.2, _y=0.2)
         for room in rooms:
             lounge.two_way(room)
-        for n, student in enumerate(
+        for n, student in enumerate((
                 'sam', 'kylie', 'jeff', 'catt', 'jim', 'meredith'
-        ):
-            engine.function['make_person'](
-                engine, student, rooms[n],
-                engine.character['social']  # everybody knows everyone
+        )):
+            engine.make_person(
+                student, rooms[n], engine.character['social']  # everybody knows everyone
             )
