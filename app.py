@@ -53,3 +53,4 @@ class DunUniPlayView(GameScreen):
 
 class DunUniApp(GameApp):
     modules = ['util', 'emotion', 'world']
+    inspector = True
