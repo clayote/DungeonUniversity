@@ -4,6 +4,7 @@ from ELiDE.game import GameScreen, GameApp
 
 
 class DunUniPlayView(GameScreen):
+    player = ObjectProperty()
     character = ObjectProperty()
     class_time = BooleanProperty()
     sleepy = BooleanProperty()
@@ -11,7 +12,7 @@ class DunUniPlayView(GameScreen):
     people_present = BooleanProperty()
 
     def go_to_class(self, *args):
-        me = self.character.avatar['physical']
+        me = self.player.avatar['physical']
         classroom = self.engine.character['physical'].place['classroom']
         me.travel_to(classroom)
         while me.location != classroom:
