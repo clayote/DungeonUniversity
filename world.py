@@ -18,3 +18,5 @@ def install(engine):
             engine.make_person(
                 student, rooms[n], engine.character['social']  # everybody knows everyone
             )
+        classroom = phys.new_place('classroom', _x=0.5, _y=0.5)
+        classroom.two_way(lounge)
