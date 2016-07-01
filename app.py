@@ -19,13 +19,13 @@ class DunUniPlayView(GameScreen):
             self.engine.next_tick('physical')
 
     def go_to_sleep(self, *args):
-        myroom = self.character.stat['room']
-        me = self.character.avatar['physical']
+        myroom = self.player.stat['room']
+        me = self.player.avatar['physical']
         if me.location != myroom:
             me.travel_to(myroom)
             while me.location != myroom:
                 self.engine.next_tick()
-        bed = self.character.stat['bed']
+        bed = self.player.stat['bed']
         me.location = bed
         self.character.stat['conscious'] = False
         for i in range(8):
