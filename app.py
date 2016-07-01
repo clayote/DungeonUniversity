@@ -16,7 +16,7 @@ class DunUniPlayView(GameScreen):
         classroom = self.engine.character['physical'].place['classroom']
         me.travel_to(classroom)
         while me.location != classroom:
-            self.engine.next_tick()
+            self.engine.next_tick('physical')
 
     def go_to_sleep(self, *args):
         myroom = self.character.stat['room']
