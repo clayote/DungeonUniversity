@@ -42,3 +42,4 @@ def install(engine):
         for pal in who_knows:
             pally = soc.place[pal]
             pally.two_way(my_brand)
+        return me
