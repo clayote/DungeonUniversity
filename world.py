@@ -15,8 +15,9 @@ def install(engine):
         for n, student in enumerate((
                 'sam', 'kylie', 'jeff', 'catt', 'jim', 'meredith', 'player'
         )):
-            engine.make_person(
+            person = engine.make_person(
                 student, rooms[n], engine.character['social']  # everybody knows everyone
             )
+            person.stat['bed'] = rooms[n].new_thing('bed{}'.format(n))
         classroom = phys.new_place('classroom', _x=0.5, _y=0.5)
         classroom.two_way(lounge)
