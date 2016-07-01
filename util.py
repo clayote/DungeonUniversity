@@ -35,6 +35,7 @@ def install(engine):
         phys = engine.character['physical']
         my_body = phys.new_thing(who, where)
         me.add_avatar(my_body)
+        me.stat['room'] = where
         soc = engine.character['social']
         my_brand = soc.new_place(who)
         me.add_avatar(my_brand)
