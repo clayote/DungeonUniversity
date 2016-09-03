@@ -55,3 +55,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# custom
+.eric6project
+.ropeproject
+*.e4p
+ELiDE
+LiSE
+gorm
+*.db
