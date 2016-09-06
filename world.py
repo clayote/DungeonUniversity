@@ -13,10 +13,10 @@ def install(engine):
         for room in rooms:
             lounge.two_way(room)
         for n, student in enumerate((
-                'sam', 'kylie', 'jeff', 'catt', 'jim', 'meredith', 'player'
+            'frances', 'josephine', 'sigmund', 'adolf', 'louise', 'edmund', 'boris'
         )):
             person = engine.make_person(
-                student, rooms[n], engine.character['social']  # everybody knows everyone
+                student, rooms[n], engine.character['social'], 'atlas://rltiles/dc-mon/' + student  # everybody knows everyone
             )
             person.stat['bed'] = rooms[n].new_thing('bed{}'.format(n))
         classroom = phys.new_place('classroom', _x=0.5, _y=0.5)

@@ -30,10 +30,12 @@ def install(engine):
         pass
 
     @engine.method
-    def make_person(engine, who, where, who_knows=[]):
+    def make_person(engine, who, where, who_knows=[], icon=None):
         me = engine.new_character(who)
         phys = engine.character['physical']
         my_body = phys.new_thing(who, where)
+        if icon:
+            my_body['_image_paths'] = [icon]
         me.add_avatar(my_body)
         me.stat['room'] = where
         soc = engine.character['social']
