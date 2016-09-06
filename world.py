@@ -16,7 +16,7 @@ def install(engine):
             'frances', 'josephine', 'sigmund', 'adolf', 'louise', 'edmund', 'boris'
         )):
             person = engine.make_person(
-                student, rooms[n], engine.character['social'], 'atlas://rltiles/dc-mon/' + student  # everybody knows everyone
+                student, rooms[n], icon='atlas://rltiles/dc-mon/' + student
             )
             person.stat['bed'] = rooms[n].new_thing('bed{}'.format(n))
         classroom = phys.new_place('classroom', _x=0.5, _y=0.5)
