@@ -37,10 +37,13 @@ def install(engine):
         if icon:
             my_body['_image_paths'] = [icon]
         me.add_avatar(my_body)
+        assert 'physical' in me.avatar and my_body.name in me.avatar['physical'], "Failed adding physical avatar"
         me.stat['room'] = where
         soc = engine.character['social']
         my_brand = soc.new_place(who)
         me.add_avatar(my_brand)
+        assert 'social' in me.avatar and my_brand.name in me.avatar['social'], "Failed adding social avatar"
+        assert 'physical' in me.avatar and my_body.name in me.avatar['physical'], "Forgot physical avatar"
         for pal in who_knows:
             pally = soc.place[pal]
             pally.two_way(my_brand)
