@@ -82,3 +82,4 @@ class DunUniPlayView(GameScreen):
 class DunUniApp(GameApp):
     modules = ['util', 'emotion', 'world']
     inspector = True
+    world_file = code_file = ':memory:'
