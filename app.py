@@ -25,7 +25,7 @@ class DunUniPlayView(GameScreen):
         n = 0
         while me.location != classroom:
             Logger.debug("DunUniPlayView: {}th tick travelling to classroom".format(n))
-            self.engine.next_tick('physical')
+            self.engine.next_tick(chars=['physical'])
             n += 1
         Logger.debug("DunUniPlayView: finished go_to_class")
         self._cmd_lock.release()
@@ -40,7 +40,7 @@ class DunUniPlayView(GameScreen):
             while me.location != myroom:
                 Logger.debug("DunUniPlayView: {}th tick travelling to my room".format(n))
                 n += 1
-                self.engine.next_tick()
+                self.engine.next_tick(chars=['physical'])
             Logger.debug("DunUniPlayView: moved {} to {}".format(me,  myroom))
         bed = self.player.stat['bed']
         me.location = bed
@@ -48,7 +48,7 @@ class DunUniPlayView(GameScreen):
         n = 0
         for i in range(8):
             Logger.debug("DunUniPlayView: {}th tick unconscious".format(n))
-            self.engine.next_tick()
+            self.engine.next_tick(chars=['physical'])
         self.character.stat['conscious'] = True
         Logger.debug("DunUniPlayView: finished go_to_sleep")
         self._cmd_lock.release()
@@ -60,9 +60,9 @@ class DunUniPlayView(GameScreen):
         if me.location != cafeteria:
             me.travel_to(cafeteria)
             while me.location != cafeteria:
-                self.engine.next_tick()
+                self.engine.next_tick(chars=['physical'])
         self.character.stat['eating'] = True
-        self.engine.next_tick()
+        self.engine.next_tick(chars=['physical'])
         self.character.stat['eating'] = False
         Logger.debug("DunUniPlayView: finished eat_food")
         self._cmd_lock.release()
@@ -72,7 +72,7 @@ class DunUniPlayView(GameScreen):
         peeps = [thing for thing in self.character.avatar['physical'].contents() if thing.user]
         self.character.stat['talking_to'] = self.engine.choice(peeps).user
         self.character.stat['talking_to'].stat['talking_to'] = self.character
-        self.engine.next_tick()
+        self.engine.next_tick(chars=['physical'])
         self.character.stat['talking_to'].stat['talking_to'] = None
         self.character.stat['talking_to'] = None
         Logger.debug("DunUniPlayView: finished socialize")
