@@ -21,3 +21,4 @@ def install(engine):
             person.stat['bed'] = rooms[n].new_thing('bed{}'.format(n))
         classroom = phys.new_place('classroom', _x=0.5, _y=0.5)
         classroom.two_way(lounge)
+        lounge.two_way(phys.new_place('cafeteria', _x=0.5, _y=0.4))
