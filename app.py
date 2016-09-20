@@ -70,6 +70,10 @@ class DunUniPlayView(GameScreen):
     def socialize(self, *args):
         self._cmd_lock.acquire()
         peeps = [thing for thing in self.player.avatar['physical'].contents() if thing.user]
+        if not peeps:
+            self._cmd_lock_release()
+            Logger.debug("DunUniPlayView: no one to socialize with")
+            return
         self.character.stat['talking_to'] = self.engine.choice(peeps).user
         self.character.stat['talking_to'].stat['talking_to'] = self.character
         self.engine.next_tick(chars=['physical'])
