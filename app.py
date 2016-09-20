@@ -56,7 +56,7 @@ class DunUniPlayView(GameScreen):
     def eat_food(self, *args):
         self._cmd_lock.acquire()
         cafeteria = self.engine.character['physical'].place['cafeteria']
-        me = self.character.avatar['physical']
+        me = self.player.avatar['physical']
         if me.location != cafeteria:
             me.travel_to(cafeteria)
             while me.location != cafeteria:
@@ -69,7 +69,7 @@ class DunUniPlayView(GameScreen):
 
     def socialize(self, *args):
         self._cmd_lock.acquire()
-        peeps = [thing for thing in self.character.avatar['physical'].contents() if thing.user]
+        peeps = [thing for thing in self.player.avatar['physical'].contents() if thing.user]
         self.character.stat['talking_to'] = self.engine.choice(peeps).user
         self.character.stat['talking_to'].stat['talking_to'] = self.character
         self.engine.next_tick(chars=['physical'])
