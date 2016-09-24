@@ -1,6 +1,5 @@
 from kivy.properties import BooleanProperty, ObjectProperty
 from kivy.logger import Logger
-from threading import Lock
 
 from ELiDE.game import GameScreen, GameApp
 
@@ -13,12 +12,7 @@ class DunUniPlayView(GameScreen):
     hungry = BooleanProperty()
     people_present = BooleanProperty()
     
-    def __init__(self,  **kwargs):
-        self._cmd_lock = Lock()
-        super().__init__(**kwargs)
-
     def go_to_class(self, *args):
-        self._cmd_lock.acquire()
         me = self.player.avatar['physical']
         classroom = self.engine.character['physical'].place['classroom']
         me.travel_to(classroom)
@@ -28,10 +22,8 @@ class DunUniPlayView(GameScreen):
             self.engine.next_tick(chars=['physical'])
             n += 1
         Logger.debug("DunUniPlayView: finished go_to_class")
-        self._cmd_lock.release()
 
     def go_to_sleep(self, *args):
-        self._cmd_lock.acquire()
         myroom = self.player.stat['room']
         me = self.player.avatar['physical']
         if me.location != myroom:
@@ -51,10 +43,8 @@ class DunUniPlayView(GameScreen):
             self.engine.next_tick(chars=['physical'])
         self.character.stat['conscious'] = True
         Logger.debug("DunUniPlayView: finished go_to_sleep")
-        self._cmd_lock.release()
 
     def eat_food(self, *args):
-        self._cmd_lock.acquire()
         cafeteria = self.engine.character['physical'].place['cafeteria']
         me = self.player.avatar['physical']
         if me.location != cafeteria:
@@ -65,10 +55,8 @@ class DunUniPlayView(GameScreen):
         self.engine.next_tick(chars=['physical'])
         self.character.stat['eating'] = False
         Logger.debug("DunUniPlayView: finished eat_food")
-        self._cmd_lock.release()
 
     def socialize(self, *args):
-        self._cmd_lock.acquire()
         peeps = [thing for thing in self.player.avatar['physical'].contents() if thing.user]
         if not peeps:
             self._cmd_lock_release()
@@ -80,7 +68,6 @@ class DunUniPlayView(GameScreen):
         self.character.stat['talking_to'].stat['talking_to'] = None
         self.character.stat['talking_to'] = None
         Logger.debug("DunUniPlayView: finished socialize")
-        self._cmd_lock.release()
 
 
 class DunUniApp(GameApp):
