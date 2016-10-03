@@ -1,3 +1,4 @@
+from time import sleep
 from kivy.properties import BooleanProperty, ObjectProperty
 from kivy.logger import Logger
 
@@ -21,6 +22,7 @@ class DunUniPlayView(GameScreen):
             Logger.debug("DunUniPlayView: {}th tick travelling to classroom".format(n))
             self.engine.next_tick(chars=['physical'])
             n += 1
+            sleep(0.5)
         Logger.debug("DunUniPlayView: finished go_to_class")
 
     def go_to_sleep(self, *args):
@@ -33,6 +35,7 @@ class DunUniPlayView(GameScreen):
                 Logger.debug("DunUniPlayView: {}th tick travelling to my room".format(n))
                 n += 1
                 self.engine.next_tick(chars=['physical'])
+                sleep(0.5)
             Logger.debug("DunUniPlayView: moved {} to {}".format(me,  myroom))
         bed = self.player.stat['bed']
         me.location = bed
@@ -51,6 +54,7 @@ class DunUniPlayView(GameScreen):
             me.travel_to(cafeteria)
             while me.location != cafeteria:
                 self.engine.next_tick(chars=['physical'])
+                sleep(0.5)
         self.character.stat['eating'] = True
         self.engine.next_tick(chars=['physical'])
         self.character.stat['eating'] = False
