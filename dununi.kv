@@ -1,4 +1,7 @@
 #: import Board ELiDE.board.Board
+#: import TravellingPawn app.TravellingPawn
+<TravellingPawn>:
+    app: app
 <DunUniPlayView>:
     BoxLayout:
         BoxLayout:
@@ -30,6 +33,7 @@
             size_hint_x: 0.6
             engine: root.engine
             character: root.character
+            pawn_cls: TravellingPawn
 <Screens>:
     DunUniPlayView:
         name: 'play'

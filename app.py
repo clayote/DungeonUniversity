@@ -12,6 +12,14 @@ resource_add_path(os.path.join(os.path.dirname(__file__), 'LPC_city_inside'))
 resource_add_path(os.path.join(os.path.dirname(__file__), 'LPC_house_interior'))
 
 
+class TravellingPawn(Pawn):
+    def on_drop(self, spot):
+        if spot is None:
+            return super().on_drop(None)
+        screen = GameApp.get_running_app().screen_manager.get_screen('play')
+        if screen.player.name != self.name:
+            return super().on_drop(None)
+        screen.wait_travel_pawn(self, spot)
 
 
 class DunUniPlayView(GameScreen):
@@ -21,6 +29,9 @@ class DunUniPlayView(GameScreen):
     sleepy = BooleanProperty()
     hungry = BooleanProperty()
     people_present = BooleanProperty()
+
+    def wait_travel_pawn(self, pawn, dest):
+        self.wait_travel('physical', pawn.name, dest.name)
     
     def go_to_class(self, *args):
         me = self.player.avatar['physical']
