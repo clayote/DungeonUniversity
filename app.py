@@ -1,8 +1,17 @@
 from kivy.properties import BooleanProperty, ObjectProperty
 from kivy.logger import Logger
+from kivy.resources import resource_add_path
+import os
 from functools import partial
 
 from ELiDE.game import GameScreen, GameApp
+from ELiDE.board import Pawn
+
+
+resource_add_path(os.path.join(os.path.dirname(__file__), 'LPC_city_inside'))
+resource_add_path(os.path.join(os.path.dirname(__file__), 'LPC_house_interior'))
+
+
 
 
 class DunUniPlayView(GameScreen):
