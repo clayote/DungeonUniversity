@@ -21,7 +21,7 @@ def install(engine):
             lounge.two_way(room)
         student_body = engine.new_character('student_body')
         for n, student in enumerate((
-            'frances', 'josephine', 'sigmund', 'adolf', 'louise', 'edmund', 'boris'
+            'frances', 'josephine', 'sigmund', 'louise', 'edmund', 'boris', 'erica'
         )):
             person = engine.make_person(
                 student, rooms[n], icon='atlas://rltiles/dc-mon/' + student
