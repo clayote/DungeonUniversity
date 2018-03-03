@@ -40,7 +40,7 @@ def install(engine):
         @student_body.avatar.rule
         def go_to_class(node):
             # There's just one really long class every day.
-            node.travel_to(node.character.place['classroom'])
+            node['arrive_at_class'] = node.travel_to(node.character.place['classroom'])
 
         @go_to_class.trigger
         def absent(node):
@@ -49,6 +49,10 @@ def install(engine):
         @go_to_class.prereq
         def class_in_session(node):
             return 8 <= node.engine.character['physical'].stat['hour'] < 15
+
+        @go_to_class.prereq
+        def not_going_to_class(node):
+            return 'arrive_at_class' not in node or node['arrive_at_class'] > node.engine.turn
 
         @student_body.avatar.rule
         def leave_class(node):
