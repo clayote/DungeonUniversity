@@ -9,24 +9,19 @@ def install(engine):
         def time_passes(character):
             character.stat['hour'] = (character.stat['hour'] + 1) % 24
 
-
         engine.add_character('social')
         # dorm 1
-        rooms = [
-            phys.new_place('room{}'.format(n), _x=0.1, _y=n/12)
-            for n in range(1, 8)
-        ]
         lounge = phys.new_place('lounge1', _x=0.3, _y=0.3, _image_paths=['atlas://city_inside/small_carpet'])
-        for room in rooms:
-            lounge.two_way(room)
         student_body = engine.new_character('student_body')
         for n, student in enumerate((
             'frances', 'josephine', 'sigmund', 'louise', 'edmund', 'boris', 'erica'
         )):
+            room = phys.new_place('room{}'.format(n), _x=0.1, _y=n / 12)
+            lounge.two_way(room)
             person = engine.make_person(
-                student, rooms[n], icon='atlas://rltiles/dc-mon/' + student
+                student, room, icon='atlas://rltiles/dc-mon/' + student
             )
-            person.stat['bed'] = rooms[n].new_thing('bed{}'.format(n), _image_paths=['atlas://city_inside/bed4'])
+            person.stat['bed'] = room.new_thing('bed{}'.format(n), _image_paths=['atlas://city_inside/bed4'])
             body = person.avatar['physical'].only
             student_body.add_avatar(body)
         classroom = phys.new_place('classroom', _x=0.5, _y=0.5, _image_paths=['mpv-shot0002.png'])
