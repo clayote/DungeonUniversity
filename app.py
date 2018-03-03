@@ -77,13 +77,13 @@ class DunUniPlayView(GameScreen):
     def socialize(self, *args):
         peeps = [
             thing for thing in self.player.avatar['physical'].location.contents()
-            if thing.user and thing != self.player.avatar['physical']
+            if 'student_body' in thing.users and thing != self.player.avatar['physical']
         ]
         if not peeps:
             Logger.debug("DunUniPlayView: no one to socialize with")
             return
         peep = self.engine.choice(peeps)
-        usr = peep.user
+        usr = peep.users[peep.name]
         Logger.debug("DunUniPlayView: going to talk to {} for a turn".format(usr.name))
         self.wait_command(partial(self.ensocialize, usr), 1, self.desocialize)
 
