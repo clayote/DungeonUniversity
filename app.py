@@ -35,10 +35,11 @@ class DunUniPlayView(GameScreen):
     
     def go_to_class(self, *args):
         me = self.player.avatar['physical']
-        if me.location.name == 'classroom':
+        clsn = me.user.stat['classroom'].name
+        if me.location.name == clsn:
             Logger.info("DunUniPlayView: already in classroom")
             return
-        self.wait_travel('physical', me.name, 'classroom')
+        self.wait_travel('physical', me.name, clsn)
 
     def go_to_sleep(self, *args):
         myroom = self.player.stat['room']
