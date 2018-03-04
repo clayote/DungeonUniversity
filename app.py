@@ -89,7 +89,7 @@ class DunUniPlayView(GameScreen):
 
     def ensocialize(self, usr, *args):
         self.character.stat['talking_to'] = usr
-        self.character.stat['talking_to'].stat['talking_to'] = self.character
+        usr.stat['talking_to'] = self.character
 
     def desocialize(self, *args):
         del self.character.stat['talking_to'].stat['talking_to']
