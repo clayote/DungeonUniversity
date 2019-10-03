@@ -22,7 +22,7 @@ class TravellingPawn(Pawn):
         screen.wait_travel_pawn(self, spot)
 
 
-class DunUniPlayView(GameScreen):
+class ImmediatePlayView(GameScreen):
     player = ObjectProperty()
     character = ObjectProperty()
     class_time = BooleanProperty()
