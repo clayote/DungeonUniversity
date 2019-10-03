@@ -1,0 +1,228 @@
+* High Concept
+  School life sim IN A DUNGEON! where you must manipulate your own
+  mental state to use magic, make friends, and appear human
+  even if you're not.
+** Manipulate your own mental state
+*** Perception
+    You may on occasion want to see through a glamour. To do this you
+    need top focus and few expectations.
+
+    I think the expectations should be a category of Interest
+    (described below) which, though useful to have, also make you more
+    vulnerable to being fooled by glamour.
+*** Emotion
+    Your commitment to your studies may waver if you burn out or get
+    too interested in other pastimes.
+
+    Specific schools of magic go well with specific emotional states,
+    but intense emotions make it harder to sit down and study.
+
+    Your character expresses themself best when in a particular
+    emotional state chosen at creation. This is the state you want to
+    be in when you socialize.
+
+    Remaining emotionally neutral isn't difficult, but basically no
+    buffs will work on you in such a state.
+** Use magic
+   The magic points are actually tiny tiny bits of your soul, which
+   regenerates at about the same pace that your bloodstream
+   refills. Your emotions affect the *quality* of your spellcasting
+   rather than the quantity.
+
+   The general absence of combat-related magic is deliberate, because
+   the game's not about that. I guess it's just not that kind of
+   school.
+*** Illusions and Glamour
+    Nonhumans have to keep up a glamour 24/7 cos this is a human school.
+
+    Some humans do this as well, because they want to look good.
+
+    Glamours are responsive to the aesthetics of the observer, and are
+    therefore harder to keep up with multiple observers, particularly
+    if they are in different emotional states.
+
+    Best when you are in a worrying mood.
+*** Mentalism
+    The most useful for altering your own emotions. It's possible to
+    alter those of others too, but doing that without consent is
+    considered assault.
+
+    Theoretically includes mind control, but it's
+    a high-level deal, and even if you can do it, getting someone to
+    follow a specific non-trivial command through mind control
+    requires precise timing: a command that arrives while they're
+    already doing something unrelated, or that doesn't jibe with their
+    emotional state, will make them confused, which makes the mind
+    control that much harder to maintain and might just cause them to
+    guess that they are being mind-controlled.
+
+    Best when in that mood associated with intellectual
+    fascination. Curiosity perhaps.
+*** Life Magic
+    Heals wounds, resurrects dead, promotes growth, and inflicts
+    cancer. Because cancer is uncontrolled growth.
+
+    You can use this to convert ambient magical energy into magic
+    points you can cast.
+
+    Best when in a kind, happy mood.
+*** Death magic
+    Kills stuff, including eg. bacteria, so this is the school for
+    curing disease. Does not have any special effect on souls,
+    however--only biological life. To affect souls you want mentalism.
+
+    Best when feeling rage.
+** Use the dungeon
+   All sorts of random junk teleports into the dungeon for no
+   reason. Much of it is vendor trash, but you do get the odd
+   spellbook or scroll you might study from.
+
+   *Living creatures* can only enter via *stabilized* portals, which
+   you can create yourself--though doing this on-campus presents the
+   risk of a monster invasion, and is therefore grounds for
+   expulsion. But when you learn the spell for it, you can do it
+   anyway, and thereby eg. summon gnomes to help you cheat on your
+   homework.
+** Make friends
+   Apart from being desirable as such, friendship will make your
+   studying a lot more effective, and it will help you get more
+   information as to what's going on around you, potentially helping
+   you spot eg. who's a vampire and who ain't.
+
+*** Social actions
+    You can generically "socialize" with anyone, or with no one in
+    particular, in which case you'll try to make nice on anyone who's
+    in the area and not otherwise occupied.
+
+    Get food and alcohol together and you can throw a party. These
+    work best when there's an entertainment on offer.
+
+*** Entertainments
+    Magic is actually pretty boring when you have to do it day-in and
+    day-out.
+
+    Remote viewing can suffice for television, though it relies on
+    already knowing something entertaining to look at. There are
+    illusions you might cast to show like a movie or a TV show, but
+    these rely on the caster having memorized the particular film to
+    show. So it's a good idea to build up an inventory of castable
+    memories to entertain with.
+
+    You could take a trip through a stable portal and see what
+    entertainments are on offer outside the dungeon, but to do that
+    within school rules you have to dress and pack in a way so that
+    you don't draw attention to yourself wherever you're going, and
+    you need to satisfy an instructor who is from the world behind
+    that portal that you're familiar with the customs and traditions
+    there.
+
+    You could of course try to sneak through without permission and
+    risk expulsion.
+
+    In any case the worlds beyond the portals are simulated only as
+    random event tables.
+*** Relationship model
+    The game makes no hardline mechanical distinction between
+    eg. friendship, romance, professional respect or whatever.
+
+    Every relationship has some level of Intensity, Trust, Respect,
+    and Commitment. Every relationship is bidirectional, so one
+    party's levels of these may be entirely different from the
+    other's.
+
+    Intensity makes people *want* to do things with each other, or
+    just spend time together.
+
+    Trust affects what they are *willing* to do together. Activities
+    that require high levels of it include dungeon-delving (trust
+    someone to protect your life), independent study (trust someone to
+    do their share of the research and so forth), and nookie (trust
+    someone to touch you only just so). You might want to bone someone
+    but not trust them enough to actually do it.
+
+    Respect mainly affects how people treat one another when their
+    emotions get heated. Any intense emotion can provoke a person to
+    do something careless, though some emotions are riskier for your
+    friends than others; high Respect will make you stop yourself
+    before yelling at them when you're angry, and will make you pay
+    attention to them when you're otherwise too blissed out to care.
+
+    Commitment is a defense stat. When something happens to damage a
+    relationship, Commitment reduces the damage, regardless of which
+    of these four stats is taking damage. This isn't necessarily a
+    good thing, as you might be highly committed to a character who
+    doesn't have much respect for you.
+
+    Irrespective of any of these, people have Interests--energy
+    reserves, sort of like mana bars, but there are many types, and
+    each person has access to only a few. You fill up the Interest by
+    doing things related to it (so you can eg. talk about it) or
+    possibly just waiting.
+
+    Some interests are linked, such that you have to spend them all at
+    once or not at all; this helps simulate highly specific interests
+    while only actually defining general ones.
+
+    It is difficult to form a strong relationship with someone you
+    don't share any interests with. It's possible, but you have to
+    make do with only the social bonuses you get from emotional
+    states. Interest bonuses are each somewhat harder to get than
+    emotion bonuses, but there are more interests than there are
+    emotions, so interests are better for stacking modifiers.
+** Appear human
+   The school's attended by dragons and the like, but in human
+   form. The administration knows this, and indeed there are classes
+   for keeping up your disguise; but not all of the *students* know
+   this, and some of them may try to kill you if they find out your
+   true nature.
+
+   Actual humans may have the reverse problem, getting bit by vampires
+   (non consensually) when it becomes apparent they have a human soul
+   (tasty, we is). So it is generally advisable to maintain a glamour
+   even if you don't have a special need for one. It creates ambiguity
+   over your humanity.
+* Gameplay
+  Each day you have some classes scheduled for you but may override
+  those with other actions.
+
+  Each class has several tests you have to pass. Each test has certain
+  skill requirements, which you may reach by book study, practice,
+  tutoring from a TA, actually attending the class and so forth. The
+  motives for attending the classes are, first, that in 100 level
+  classes your attendance is in fact part of your overall score;
+  second, your familiarity with the class (and not the content) gives
+  a modifier to your performance on the test; and third, it really
+  helps your relationship with your teacher, which is the
+  best avenue for skill leveling.
+* Interface
+** Map
+*** Portals
+*** Classrooms
+    These have random shapes, meaning random capacity and random
+    suitability for the classes.
+
+    They are more o less randomly connected although you can *make*
+    new connections between them by winning at certain adventures.
+
+    As in ...that Kairosoft game... students may use rooms for
+    practice when there's no class, and indeed there are rooms that
+    have that purpose only. Many, perhaps most rooms have permanent
+    enchantments on them that you only get partial information on what
+    they do.
+*** Shops
+    Permanent storefronts are rare due to the whole wandering-monster
+    thing, but there are lots of adventurers willing to trade. For
+    game purposes they all act kind of like traveling merchants even
+    when they're really looters.
+*** Dorms
+    You sleep in these.
+
+    You might have to set one up correctly for your species --
+    vampires need coffins, dwarves need a secure way to stash extra
+    gold to keep their spirits up.
+** Cards
+   Each represents something to do. Play it where you want to do it.
+** Scheduler
+  Upon playing a card, you "pencil in" your next actions to the
+  ingame planner. A "Go" button appears on the next action, and you
+  click it to advance to the end of that one action.
