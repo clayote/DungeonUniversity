@@ -1,10 +1,9 @@
-Dungeon University hasn't been released, and should be considered
-proprietary until I decide what to do with it.
+ The MIT License (MIT)
 
-The LiSE engine and ELiDE app kit are GPL3 licensed, available here:
-https://github.com/LogicalDash/LiSE
+Copyright © 2022 Zachary Spector
 
-The background image, uncle_mugen_tomb.jpg, is by "Mugen" John Cel,
-and may be used and modified freely. I got it from the LemmaSoft
-forums:
-https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302&p=273080&hilit=tomb#p273080
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
